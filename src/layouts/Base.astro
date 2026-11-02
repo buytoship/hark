@@ -1,0 +1,72 @@
+---
+import '../styles/global.css';
+import { SITE, url, lastChecked, fmtDate } from '../lib/site';
+const { title, description = SITE.description, type = 'website' } = Astro.props;
+const fullTitle = title ? `${title} · ${SITE.name}` : `${SITE.name} — ${SITE.tagline}`;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const checked = await lastChecked();
+const path = Astro.url.pathname;
+const nav = [
+  ['/black-friday-2026/', 'Black Friday 2026', 'bf'],
+  ['/deals/', 'All deals', ''],
+  ['/digest/', 'Daily digest', ''],
+  ['/category/vpn-security/', 'VPN', ''],
+  ['/category/hosting-vps/', 'Hosting', ''],
+  ['/category/ai-tools/', 'AI', ''],
+  ['/category/electronics/', 'Electronics', ''],
+  ['/category/investing-cashback/', 'Apps', ''],
+];
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta property="og:site_name" content={SITE.name} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content={type} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="theme-color" content="#0b0f14" />
+  <link rel="icon" href={url('/favicon.svg')} type="image/svg+xml" />
+  <link rel="alternate" type="application/rss+xml" title={`${SITE.name} daily digest`} href={url('/rss.xml')} />
+  <link rel="sitemap" href={url('/sitemap-index.xml')} />
+</head>
+<body>
+  <header class="site-head">
+    <div class="wrap">
+      <a class="brand" href={url('/')}><span class="logo">S</span>{SITE.name}</a>
+      <nav class="nav" aria-label="Main">
+        {nav.map(([href, label, cls]) => (
+          <a href={url(href)} class={cls || undefined} aria-current={path === url(href) ? 'page' : undefined}>{label}</a>
+        ))}
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <slot />
+    <p class="disclosure-bar">
+      <strong>Disclosure:</strong> {SITE.name} may earn a commission when you buy through links on this site, at no extra cost to you. <a href={url('/disclosure/')}>Learn more</a>. Prices verified on official pages; last checked {fmtDate(checked)}. Prices can change at any time — confirm on the merchant’s site before you buy.
+    </p>
+  </main>
+  <footer class="site-foot">
+    <div class="wrap cols">
+      <div><b style="color:var(--text)">{SITE.name}</b> — {SITE.tagline}.<br />© 2026 {SITE.name}. For US shoppers.</div>
+      <nav aria-label="Footer">
+        <a href={url('/about/')}>About</a>
+        <a href={url('/disclosure/')}>Affiliate Disclosure</a>
+        <a href={url('/privacy/')}>Privacy</a>
+        <a href={url('/contact/')}>Contact</a>
+        <a href={url('/rss.xml')}>RSS</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

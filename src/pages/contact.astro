@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+import TelegramCTA from '../components/TelegramCTA.astro';
+import { SITE } from '../lib/site';
+---
+<Base title="Contact" description={`Contact ${SITE.name}.`}>
+  <div class="prose">
+    <h1 class="page">Contact</h1>
+    <p class="lede">A contact form is coming soon.</p>
+    <p>Spotted a price that changed, a deal that ended or a merchant we should watch? We’re setting up a contact form so you can tell us — it will appear on this page shortly. Until then, the Telegram channel below will be the fastest way to reach us once it launches.</p>
+  </div>
+  <section><TelegramCTA /></section>
+</Base>

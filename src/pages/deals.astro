@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import DealCard from '../components/DealCard.astro';
+import { getActiveDeals } from '../lib/site';
+const deals = await getActiveDeals();
+const live = deals.filter((d) => d.data.status === 'live');
+const upcoming = deals.filter((d) => d.data.status === 'upcoming');
+---
+<Base title="All active deals" description="Every active and upcoming tech deal Stack Daily is tracking, verified on official merchant pages.">
+  <h1 class="page">All active deals</h1>
+  <p class="lede">{live.length} live and {upcoming.length} upcoming deals, each verified on the merchant’s official page. Hosting and VPN prices are per month on the plan term shown.</p>
+  <section><div class="sec-head"><h2>Live now</h2></div><div class="grid">{live.map((d) => <DealCard deal={d} />)}</div></section>
+  {upcoming.length > 0 && <section><div class="sec-head"><h2>Starting soon</h2></div><div class="grid">{upcoming.map((d) => <DealCard deal={d} />)}</div></section>}
+</Base>

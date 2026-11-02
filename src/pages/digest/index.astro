@@ -1,0 +1,13 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+import TelegramCTA from '../../components/TelegramCTA.astro';
+import { getPosts } from '../../lib/site';
+const posts = await getPosts();
+---
+<Base title="Daily digest" description="Stack Daily's daily digest: what changed in verified tech deals and Black Friday 2026 schedules each day.">
+  <h1 class="page">Daily digest</h1>
+  <p class="lede">A short daily note on what went live, what changed and what’s coming — only from official merchant and retailer pages.</p>
+  <section><PostList posts={posts} /></section>
+  <section><TelegramCTA /></section>
+</Base>

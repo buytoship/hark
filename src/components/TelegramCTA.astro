@@ -1,0 +1,11 @@
+---
+import { SITE } from '../lib/site';
+import Icon from './Icon.astro';
+---
+<div class="cta" id="telegram">
+  <div>
+    <h3>Get the daily digest on Telegram</h3>
+    <p>One short post a day with the deals that are actually live. {SITE.telegramLabel}.</p>
+  </div>
+  <a class="btn" href={SITE.telegramUrl}><Icon name="send" size={16} /> {SITE.telegramUrl === '#telegram' ? 'Coming soon' : 'Join channel'}</a>
+</div>

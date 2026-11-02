@@ -1,0 +1,35 @@
+---
+import Base from '../../layouts/Base.astro';
+import DealCard from '../../components/DealCard.astro';
+import Icon from '../../components/Icon.astro';
+import { CATEGORIES } from '../../data/categories';
+import { getActiveDeals, url } from '../../lib/site';
+export function getStaticPaths() {
+  return CATEGORIES.map((c) => ({ params: { slug: c.slug }, props: { cat: c } }));
+}
+const { cat } = Astro.props;
+const deals = (await getActiveDeals()).filter((d) => d.data.categories.includes(cat.slug));
+---
+<Base title={`${cat.name} deals`} description={`Verified ${cat.name} deals for US shoppers: ${cat.short}. Prices checked on official merchant pages.`}>
+  <p class="crumbs"><a href={url('/')}>Home</a> / Categories</p>
+  <h1 class="page"><span style="color:var(--accent);vertical-align:-3px"><Icon name={cat.icon} size={28} /></span> {cat.name} deals</h1>
+  <p class="lede">{cat.intro}</p>
+  <section>
+    <div class="sec-head"><h2>Active deals</h2></div>
+    {deals.length ? <div class="grid">{deals.map((d) => <DealCard deal={d} />)}</div>
+      : <div class="empty">No verified deals in this category right now. We only post a deal once its price is confirmed on the merchant’s official page — check the <a href={url('/digest/')}>daily digest</a> or the <a href={url('/black-friday-2026/')}>Black Friday 2026 hub</a> for updates.</div>}
+  </section>
+  <section>
+    <div class="sec-head"><h2>Top merchants we watch</h2></div>
+    {cat.groups.map((g) => (
+      <>
+        <h3 style="margin:18px 0 8px;font-size:1rem;color:var(--muted)">{g.title}</h3>
+        <ul class="mlist">
+          {g.merchants.map((m) => (
+            <li><a href={`https://${m.domain}/`} rel="noopener" target="_blank">{m.name}</a> <small style="color:var(--muted)">{m.domain}</small><span>{m.line}</span></li>
+          ))}
+        </ul>
+      </>
+    ))}
+  </section>
+</Base>

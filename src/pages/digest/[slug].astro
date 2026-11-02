@@ -1,0 +1,28 @@
+---
+import Base from '../../layouts/Base.astro';
+import DealCard from '../../components/DealCard.astro';
+import TelegramCTA from '../../components/TelegramCTA.astro';
+import { render } from 'astro:content';
+import { getPosts, getDeals, url, fmtDate } from '../../lib/site';
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((p) => ({ params: { slug: p.id }, props: { post: p } }));
+}
+const { post } = Astro.props;
+const { Content } = await render(post);
+const all = await getDeals();
+const deals = post.data.deals.map((id) => all.find((d) => d.id === id)).filter(Boolean);
+---
+<Base title={post.data.title} description={post.data.description} type="article">
+  <p class="crumbs"><a href={url('/digest/')}>Daily digest</a> / {fmtDate(post.data.date)}</p>
+  <h1 class="page">{post.data.title}</h1>
+  <p class="lede"><time datetime={post.data.date.toISOString().slice(0, 10)}>{fmtDate(post.data.date)}</time>{post.data.lastChecked && <> · Prices verified on official pages; last checked {fmtDate(post.data.lastChecked)}</>}</p>
+  <div class="prose"><Content /></div>
+  {deals.length > 0 && (
+    <section>
+      <div class="sec-head"><h2>Deals in this digest</h2></div>
+      <div class="grid">{deals.map((d) => <DealCard deal={d} />)}</div>
+    </section>
+  )}
+  <section><TelegramCTA /></section>
+</Base>

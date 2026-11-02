@@ -1,0 +1,19 @@
+{
+  "merchant": "hostinger",
+  "starts": "2026-10-19",
+  "ends": "2026-12-14 (time zone unknown)",
+  "code": "No code needed",
+  "status": "live",
+  "url": "https://www.hostinger.com/black-friday",
+  "note": "Prices are 'From' prices on Hostinger's Black Friday page and require a multi-year prepaid term; renewal prices vary by plan and are shown at checkout.",
+  "product": "Email marketing (Hostinger Reach)",
+  "categories": [
+    "hosting-vps",
+    "ai-tools"
+  ],
+  "was": "$3.99/mo",
+  "now": "$0.99/mo",
+  "discount": "75% off",
+  "verified": "2026-10-29",
+  "order": 21
+}

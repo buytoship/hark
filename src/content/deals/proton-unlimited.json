@@ -1,0 +1,18 @@
+{
+  "merchant": "proton",
+  "product": "Proton Unlimited, 1-year plan",
+  "categories": [
+    "vpn-security"
+  ],
+  "was": "$12.99/mo",
+  "now": "$6.49/mo",
+  "discount": "50% off",
+  "starts": "2026-10-26 (third-party report)",
+  "ends": "unknown",
+  "code": "No code to enter (partner page applies the offer)",
+  "status": "live",
+  "verified": "2026-10-28",
+  "url": "https://protonvpn.com/l/bf-vpn-offers-2026",
+  "note": "$77.88 for the first year, then renews at $119.88/year. Proton says this Black Friday pricing is available exclusively through its partner offer page; the public pricing page shows regular prices.",
+  "order": 12
+}

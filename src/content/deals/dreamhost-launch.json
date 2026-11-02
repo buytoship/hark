@@ -1,0 +1,20 @@
+{
+  "merchant": "dreamhost",
+  "categories": [
+    "hosting-vps"
+  ],
+  "was": "unknown",
+  "starts": "unknown",
+  "ends": "unknown",
+  "code": "No code needed (promo applied by the official cart link)",
+  "status": "live",
+  "verified": "2026-10-29",
+  "url": "https://www.dreamhost.com/promo/",
+  "blackFriday": false,
+  "product": "Web Hosting Launch (first 4 years)",
+  "now": "$1.99/mo",
+  "discount": "save 83%",
+  "note": "Price applies to the first 4 years, billed upfront at checkout; includes a free domain for 1 year and a 30-day money-back guarantee. The page is labeled as an October 2026 special, not a Black Friday deal. Renews at $7.99/mo after 4 years.",
+  "featured": true,
+  "order": 7
+}

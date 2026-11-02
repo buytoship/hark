@@ -1,0 +1,19 @@
+{
+  "merchant": "hostinger",
+  "starts": "2026-10-19",
+  "ends": "2026-12-14 (time zone unknown)",
+  "code": "No code needed",
+  "status": "live",
+  "url": "https://www.hostinger.com/black-friday",
+  "note": "$0.01 applies to the first year of a 3-year .com registration, per Hostinger's Black Friday page.",
+  "product": ".com domain (first year, 3-year term)",
+  "categories": [
+    "hosting-vps"
+  ],
+  "was": "$19.99",
+  "now": "$0.01",
+  "discount": "first year",
+  "verified": "2026-10-28",
+  "featured": true,
+  "order": 6
+}

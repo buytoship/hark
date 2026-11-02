@@ -1,0 +1,13 @@
+---
+import { url, fmtDate } from '../lib/site';
+const { posts } = Astro.props;
+---
+<div class="posts">
+  {posts.map((p) => (
+    <a class="post-row" href={url(`/digest/${p.id}/`)}>
+      <time datetime={p.data.date.toISOString().slice(0, 10)}>{fmtDate(p.data.date)}</time>
+      <h3>{p.data.title}</h3>
+      <p>{p.data.description}</p>
+    </a>
+  ))}
+</div>

@@ -1,0 +1,33 @@
+---
+import { dealHref, dealRel, getMerchant } from '../lib/links';
+import { fmtDate } from '../lib/site';
+import Icon from './Icon.astro';
+const { deal, showNote = true } = Astro.props;
+const d = deal.data;
+const m = getMerchant(d.merchant);
+const palette = ['#2563eb', '#7c3aed', '#db2777', '#ea580c', '#0891b2', '#059669', '#4f46e5', '#b45309'];
+const hue = palette[[...m.name].reduce((a, c) => a + c.charCodeAt(0), 0) % palette.length];
+const wasKnown = d.was && d.was !== 'unknown';
+const statusLabel = { live: 'Live', upcoming: 'Upcoming', ended: 'Ended' }[d.status];
+---
+<article class="card" id={deal.id}>
+  <div class="deal-top">
+    <div class="badge" style={`background:${hue}`}>{m.name.replace(/^The /, '').charAt(0)}</div>
+    <div class="merchant">{m.name}</div>
+    <span class={`status ${d.status}`}>{statusLabel}</span>
+  </div>
+  <h3 class="product">{d.product}</h3>
+  <div class="price">
+    {wasKnown ? <span class="was">{d.was}</span> : <span class="was unk">Was: unknown</span>}
+    <span class="now">{d.now}</span>
+    {d.discount && <span class="off">{d.discount}</span>}
+  </div>
+  <dl class="meta">
+    {d.status === 'upcoming' && <><dt>Starts</dt><dd>{fmtDate(d.starts)}</dd></>}
+    <dt>Ends</dt><dd>{d.ends === 'unknown' ? 'unknown' : fmtDate(d.ends)}</dd>
+    <dt>Code</dt><dd>{d.code}</dd>
+  </dl>
+  {showNote && d.note && <p class="note">{d.note}</p>}
+  <a class="btn" href={dealHref(d)} rel={dealRel(d)} target="_blank">Get deal <Icon name="arrow" size={16} /></a>
+  <p class="verified">Verified on the official page {fmtDate(d.verified)}</p>
+</article>

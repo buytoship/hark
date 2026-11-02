@@ -1,0 +1,19 @@
+{
+  "merchant": "home-depot",
+  "categories": [
+    "tools-home"
+  ],
+  "was": "unknown",
+  "starts": "2026-11-05",
+  "ends": "2026-11-25 (time zone unknown)",
+  "code": "unknown",
+  "status": "upcoming",
+  "verified": "2026-10-29",
+  "url": "https://corporate.homedepot.com/news/products/home-depot-kicks-black-friday-season",
+  "product": "RYOBI, Milwaukee & DEWALT power tools: buy one, get a select tool free",
+  "now": "Buy 1, get 1 select tool free",
+  "discount": "select tools",
+  "note": "Per The Home Depot's Black Friday announcement. Eligible tools not listed individually.",
+  "featured": true,
+  "order": 9
+}

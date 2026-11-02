@@ -1,0 +1,8 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/site';
+---
+<Base title="Page not found">
+  <h1 class="page">Page not found</h1>
+  <p class="lede">That page doesn’t exist (or the deal has moved). Try <a href={url('/')}>today’s top deals</a> or the <a href={url('/black-friday-2026/')}>Black Friday 2026 hub</a>.</p>
+</Base>

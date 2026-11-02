@@ -1,0 +1,17 @@
+{
+  "merchant": "surfshark",
+  "categories": [
+    "vpn-security"
+  ],
+  "starts": "unknown",
+  "ends": "unknown",
+  "status": "live",
+  "verified": "2026-10-28",
+  "url": "https://surfshark.com/pricing",
+  "product": "Surfshark One+ (27 months)",
+  "was": "$616.95",
+  "now": "$107.73",
+  "discount": "$3.99/mo · 83% off",
+  "note": "Total for the first 27 months.",
+  "order": 27
+}

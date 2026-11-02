@@ -1,0 +1,66 @@
+---
+import Base from '../layouts/Base.astro';
+import DealCard from '../components/DealCard.astro';
+import TelegramCTA from '../components/TelegramCTA.astro';
+import { KEY_DATES, RETAILERS } from '../data/calendar';
+import { getDeals, fmtDate, url } from '../lib/site';
+import { getMerchant } from '../lib/links';
+const deals = await getDeals();
+const byMerchant = new Map<string, typeof deals>();
+for (const d of deals) {
+  if (!byMerchant.has(d.data.merchant)) byMerchant.set(d.data.merchant, []);
+  byMerchant.get(d.data.merchant)!.push(d);
+}
+const pending = [
+  ['Hosting', 'Bluehost, Namecheap, RackNerd, InterServer, FastComet'],
+  ['VPN & security', 'Norton, Bitdefender, 1Password and others'],
+  ['AI tools', 'Grammarly, Jasper, ElevenLabs, Descript, Speechify, InVideo'],
+  ['Electronics', 'Dell, Lenovo US, Anker'],
+];
+---
+<Base title="Black Friday 2026 deals & retailer calendar" description="Every Black Friday 2026 tech deal we've verified on official pages, plus the official Black Friday and Cyber Monday calendars for Walmart, Best Buy, Target, Home Depot, Lowe's and Amazon.">
+  <h1 class="page">Black Friday 2026 hub</h1>
+  <p class="lede">Every Black Friday deal we track, grouped by merchant, plus the official retailer calendars. Prices and dates come only from official pages; anything we couldn’t confirm is marked “unknown”.</p>
+  <div class="keydates">
+    {KEY_DATES.map((k) => (
+      <div class={`kd ${k.label !== 'Thanksgiving' ? 'hot' : ''}`}><span>{k.label}</span><b>{fmtDate(k.date).replace(', 2026', '')}</b><span>{k.day}, 2026</span></div>
+    ))}
+  </div>
+
+  <section>
+    <div class="sec-head"><h2>Retailer event calendar</h2></div>
+    <div class="cal">
+      {RETAILERS.map((r) => (
+        <div class="card">
+          <div class="sec-head" style="margin:0"><h3 style="margin:0">{r.name}</h3>{r.source && <a href={r.source} target="_blank" rel="noopener">Official source →</a>}</div>
+          <table>
+            {r.events.map((e) => (<tr><td>{e.name}{e.note && <small>{e.note}</small>}</td><td>{e.dates}</td></tr>))}
+          </table>
+          {r.note && <p class="note">{r.note}</p>}
+          <p class="note">Checked {fmtDate(r.verified)}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {[...byMerchant.entries()].map(([key, list]) => (
+    <section id={key}>
+      <div class="sec-head"><h2>{getMerchant(key).name}</h2><span class="note">{list.length} {list.length === 1 ? 'deal' : 'deals'}</span></div>
+      <div class="grid">{list.map((d) => <DealCard deal={d} />)}</div>
+    </section>
+  ))}
+
+  <section>
+    <div class="sec-head"><h2>Waiting on official pricing</h2></div>
+    <div class="card">
+      <p class="note" style="font-size:.92rem">These brands haven’t published 2026 Black Friday prices we could confirm on their own sites yet. We’ll add them the day they do.</p>
+      <table class="meta" style="display:table;width:100%">
+        {pending.map(([c, list]) => (<tr><td style="padding:4px 12px 4px 0;font-weight:600;color:var(--muted)">{c}</td><td style="padding:4px 0">{list}</td></tr>))}
+      </table>
+      <p class="note">Lenovo US has a Black Friday page live at <a href="https://www.lenovo.com/us/en/deals/black-friday-sale/" target="_blank" rel="noopener">lenovo.com</a>; individual prices not yet verified.</p>
+    </div>
+  </section>
+
+  <section><TelegramCTA /></section>
+  <p class="note">See also: <a href={url('/digest/')}>daily digest</a> · <a href={url('/deals/')}>all active deals</a></p>
+</Base>

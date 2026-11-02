@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE, url } from '../lib/site';
+---
+<Base title="About" description={`About ${SITE.name}: how we find and verify tech deals for US shoppers.`}>
+  <div class="prose">
+    <h1 class="page">About {SITE.name}</h1>
+    <p class="lede">{SITE.name} is a daily deals digest for US shoppers who buy tech: VPNs and security software, web hosting and VPS, AI tools, electronics, and the apps that pay you back.</p>
+    <h2>How we pick deals</h2>
+    <ul>
+      <li><strong>Official pages only.</strong> A price goes on the site only after we see it on the merchant’s or retailer’s own website or press release.</li>
+      <li><strong>No guessing.</strong> If a merchant doesn’t publish an original price, a start date or an end date, we write “unknown” instead of filling it in.</li>
+      <li><strong>The fine print up front.</strong> Hosting and VPN deals usually need a long prepaid term and renew at a higher price. We show the term and the renewal price whenever the merchant publishes it.</li>
+      <li><strong>Dated checks.</strong> Every deal shows the date we last verified it. Prices change — always confirm at checkout.</li>
+    </ul>
+    <h2>What we cover</h2>
+    <p><a href={url('/category/vpn-security/')}>VPN & Security</a>, <a href={url('/category/hosting-vps/')}>Hosting & VPS</a>, <a href={url('/category/ai-tools/')}>AI Tools</a>, <a href={url('/category/electronics/')}>Electronics</a>, <a href={url('/category/investing-cashback/')}>Investing & Cashback Apps</a>, and our <a href={url('/black-friday-2026/')}>Black Friday 2026 hub</a>.</p>
+    <h2>How we make money</h2>
+    <p>Some links may become affiliate links, which means we may earn a commission if you buy — at no extra cost to you. That never decides whether a deal is listed or what we say about it. Read the full <a href={url('/disclosure/')}>affiliate disclosure</a>.</p>
+  </div>
+</Base>

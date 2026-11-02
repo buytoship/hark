@@ -1,0 +1,19 @@
+{
+  "merchant": "hostinger",
+  "starts": "2026-10-19",
+  "ends": "2026-12-14 (time zone unknown)",
+  "code": "No code needed",
+  "status": "live",
+  "url": "https://www.hostinger.com/black-friday",
+  "note": "Prices are 'From' prices on Hostinger's Black Friday page and require a multi-year prepaid term; renewal prices vary by plan and are shown at checkout.",
+  "product": "Web hosting",
+  "categories": [
+    "hosting-vps"
+  ],
+  "was": "$12.19/mo",
+  "now": "$2.49/mo",
+  "discount": "80% off",
+  "verified": "2026-10-28",
+  "featured": true,
+  "order": 3
+}

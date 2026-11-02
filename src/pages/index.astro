@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import DealCard from '../components/DealCard.astro';
+import PostList from '../components/PostList.astro';
+import TelegramCTA from '../components/TelegramCTA.astro';
+import Icon from '../components/Icon.astro';
+import { CATEGORIES } from '../data/categories';
+import { getActiveDeals, getPosts, url, SITE } from '../lib/site';
+const active = await getActiveDeals();
+const top = active.filter((d) => d.data.featured).slice(0, 9);
+const posts = (await getPosts()).slice(0, 3);
+const countFor = (slug: string) => active.filter((d) => d.data.categories.includes(slug)).length;
+---
+<Base>
+  <div class="hero">
+    <span class="eyebrow"><Icon name="tag" size={14} /> {SITE.tagline}</span>
+    <h1>Tech deals worth your money — checked on the official page.</h1>
+    <p>VPNs, hosting, AI tools and electronics for US shoppers. Every price below comes from the merchant’s own site, with the end date when they publish it and “unknown” when they don’t.</p>
+    <div class="countdown">
+      <span class="pill">Black Friday <b>Nov 27</b></span>
+      <span class="pill">Cyber Monday <b>Nov 30</b></span>
+      <span class="pill"><b>{active.length}</b> tracked deals</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="sec-head"><h2>Today’s top deals</h2><a href={url('/deals/')}>All deals →</a></div>
+    <div class="grid">{top.map((d) => <DealCard deal={d} showNote={false} />)}</div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Latest daily digest</h2><a href={url('/digest/')}>All digests →</a></div>
+    <PostList posts={posts} />
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Browse by category</h2></div>
+    <div class="tiles">
+      {CATEGORIES.map((c) => (
+        <a class="tile" href={url(`/category/${c.slug}/`)}>
+          <span class="ic"><Icon name={c.icon} /></span>
+          <b>{c.name}</b>
+          <span>{c.short}</span>
+          <span class="count">{countFor(c.slug) ? `${countFor(c.slug)} active deals` : 'Merchants we watch'}</span>
+        </a>
+      ))}
+      <a class="tile" href={url('/black-friday-2026/')}>
+        <span class="ic" style="color:var(--hot);background:color-mix(in srgb,var(--hot) 15%,transparent)"><Icon name="tag" /></span>
+        <b>Black Friday 2026</b>
+        <span>Every tracked deal + retailer calendars</span>
+        <span class="count" style="color:var(--hot)">Nov 27 · Cyber Monday Nov 30</span>
+      </a>
+    </div>
+  </section>
+
+  <section><TelegramCTA /></section>
+</Base>

@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../lib/site';
+---
+<Base title="Privacy Policy" description={`${SITE.name} privacy policy.`}>
+  <div class="prose">
+    <h1 class="page">Privacy Policy</h1>
+    <p class="lede">Last updated November 2, 2026</p>
+    <p>{SITE.name} is a static website. We don’t ask you to create an account, and we don’t run our own comment system, contact form or newsletter sign-up on this site today.</p>
+    <h2>Information we collect</h2>
+    <ul>
+      <li><strong>No accounts or forms.</strong> We don’t collect your name, email address or payment details on this site.</li>
+      <li><strong>No advertising trackers.</strong> We don’t use advertising cookies or sell personal information.</li>
+      <li><strong>Hosting logs.</strong> Our hosting provider may automatically log technical data such as your IP address, browser type and the pages requested, for security and reliability. We don’t use these logs to identify you.</li>
+    </ul>
+    <h2>Links to other sites</h2>
+    <p>Deals link to merchants’ websites. Once you leave {SITE.name}, the merchant’s own privacy policy applies. If a link is an affiliate link, the merchant or affiliate network may set cookies to credit the referral; those cookies are governed by their policies.</p>
+    <h2>Children</h2>
+    <p>This site is intended for adults in the United States and is not directed to children under 13.</p>
+    <h2>Your choices</h2>
+    <p>You can block or delete cookies in your browser settings at any time. If we add analytics, a newsletter or a contact form in the future, we will update this policy before doing so.</p>
+    <h2>Changes</h2>
+    <p>We may update this policy from time to time. The date at the top shows when it was last changed.</p>
+  </div>
+</Base>

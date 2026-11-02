@@ -1,0 +1,17 @@
+{
+  "merchant": "surfshark",
+  "categories": [
+    "vpn-security"
+  ],
+  "starts": "unknown",
+  "ends": "unknown",
+  "status": "live",
+  "verified": "2026-10-28",
+  "url": "https://surfshark.com/pricing",
+  "product": "Surfshark Starter (27 months)",
+  "was": "$511.65",
+  "now": "$67.23",
+  "discount": "$2.49/mo · 87% off",
+  "note": "Total for the first 27 months.",
+  "order": 26
+}

@@ -1,0 +1,18 @@
+{
+  "merchant": "surfshark",
+  "categories": [
+    "vpn-security"
+  ],
+  "starts": "unknown",
+  "ends": "unknown",
+  "status": "live",
+  "verified": "2026-10-28",
+  "url": "https://surfshark.com/pricing",
+  "product": "Surfshark One (27 months, labeled Black Friday deal)",
+  "was": "$538.65",
+  "now": "$67.23",
+  "discount": "$2.49/mo · 88% off",
+  "note": "Prices are the total for the first 27 months. Surfshark One and Starter are the same price right now.",
+  "featured": true,
+  "order": 4
+}

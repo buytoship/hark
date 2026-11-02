@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../lib/site';
+---
+<Base title="Affiliate Disclosure" description={`${SITE.name} affiliate disclosure, in line with FTC guidelines.`}>
+  <div class="prose">
+    <h1 class="page">Affiliate Disclosure</h1>
+    <p class="lede">Last updated November 2, 2026</p>
+    <p>{SITE.name} is reader-supported. Some of the links on this site are, or may become, affiliate links. If you click one and make a purchase, we may earn a commission from the merchant. This costs you nothing extra — the price you pay is the same.</p>
+    <h2>What this means for you</h2>
+    <ul>
+      <li>We may earn a commission when you buy through links on {SITE.name}. Links that earn us a commission are marked as sponsored in the page code.</li>
+      <li>Commissions never change which deals we list or what we say about them. A deal only appears after its price is confirmed on the merchant’s official page.</li>
+      <li>We are not paid to include specific deals, and merchants do not review our posts before they go live.</li>
+    </ul>
+    <h2>Retailer programs</h2>
+    <p>{SITE.name} may participate in affiliate programs run by retailers and affiliate networks. Where we take part in a retailer’s associate program — for example, Amazon’s — we earn from qualifying purchases made through our links, and we will name that program on this page.</p>
+    <h2>Prices and availability</h2>
+    <p>Prices, terms and availability are set by merchants and can change at any time. Each deal shows the date we last checked it on the official page. Please confirm the final price, plan term and renewal price at checkout.</p>
+    <p>This disclosure is provided in line with the U.S. Federal Trade Commission’s guidance on endorsements and testimonials (16 CFR Part 255).</p>
+  </div>
+</Base>

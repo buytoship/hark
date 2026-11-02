@@ -1,0 +1,38 @@
+{
+  "hostinger": {
+    "name": "Hostinger",
+    "domain": "hostinger.com",
+    "url": "https://www.hostinger.com/",
+    "affiliate_url": ""
+  },
+  "dreamhost": {
+    "name": "DreamHost",
+    "domain": "dreamhost.com",
+    "url": "https://www.dreamhost.com/",
+    "affiliate_url": ""
+  },
+  "nordvpn": {
+    "name": "NordVPN",
+    "domain": "nordvpn.com",
+    "url": "https://nordvpn.com/",
+    "affiliate_url": ""
+  },
+  "surfshark": {
+    "name": "Surfshark",
+    "domain": "surfshark.com",
+    "url": "https://surfshark.com/",
+    "affiliate_url": ""
+  },
+  "proton": {
+    "name": "Proton",
+    "domain": "protonvpn.com",
+    "url": "https://protonvpn.com/",
+    "affiliate_url": ""
+  },
+  "home-depot": {
+    "name": "The Home Depot",
+    "domain": "homedepot.com",
+    "url": "https://www.homedepot.com/",
+    "affiliate_url": ""
+  }
+}

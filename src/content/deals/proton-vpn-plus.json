@@ -1,0 +1,19 @@
+{
+  "merchant": "proton",
+  "product": "Proton VPN Plus, 2-year plan",
+  "categories": [
+    "vpn-security"
+  ],
+  "was": "$9.99/mo",
+  "now": "$2.49/mo",
+  "discount": "75% off",
+  "starts": "2026-10-26 (third-party report)",
+  "ends": "unknown",
+  "code": "No code to enter (partner page applies the offer)",
+  "status": "live",
+  "verified": "2026-10-28",
+  "url": "https://protonvpn.com/l/bf-vpn-offers-2026",
+  "note": "$59.76 for the first 24 months, then renews at $83.88/year. Proton says this Black Friday pricing is available exclusively through its partner offer page; the public pricing page shows regular prices.",
+  "featured": true,
+  "order": 5
+}

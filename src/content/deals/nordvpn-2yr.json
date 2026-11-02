@@ -1,0 +1,18 @@
+{
+  "merchant": "nordvpn",
+  "product": "2-year plan (+3 extra months)",
+  "categories": [
+    "vpn-security"
+  ],
+  "was": "unknown",
+  "now": "from $3.49/mo",
+  "discount": "up to 78% off",
+  "starts": "2026-10-21",
+  "ends": "2026-12-09 (time zone unknown)",
+  "status": "live",
+  "verified": "2026-10-28",
+  "url": "https://nordvpn.com/black-friday",
+  "note": "NordVPN's page says “Deal ends December 9, 2026”. Per-tier prices (Basic / Complete / Prime) were not individually verified.",
+  "featured": true,
+  "order": 1
+}

@@ -1,0 +1,18 @@
+{
+  "merchant": "home-depot",
+  "categories": [
+    "tools-home"
+  ],
+  "was": "unknown",
+  "starts": "2026-11-05",
+  "ends": "2026-11-25 (time zone unknown)",
+  "code": "unknown",
+  "status": "upcoming",
+  "verified": "2026-10-29",
+  "url": "https://corporate.homedepot.com/news/products/home-depot-kicks-black-friday-season",
+  "product": "Major appliances: extra savings",
+  "now": "Up to $500 extra off",
+  "discount": "up to $1,250 total",
+  "note": "Up to $500 off refrigeration ($2,498+), $300 off laundry ($1,698+) or ranges ($1,498+), $150 off dishwashers ($798+); max $1,250.",
+  "order": 30
+}
