@@ -34,5 +34,11 @@
     "domain": "homedepot.com",
     "url": "https://www.homedepot.com/",
     "affiliate_url": ""
+  },
+  "hostingcom": {
+    "name": "hosting.com",
+    "domain": "hosting.com",
+    "url": "https://hosting.com/",
+    "affiliate_url": ""
   }
 }

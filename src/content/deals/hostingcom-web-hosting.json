@@ -1,0 +1,18 @@
+{
+  "merchant": "hostingcom",
+  "product": "Shared web hosting, 12-month plans (Starter / Pro / Max)",
+  "categories": [
+    "hosting-vps"
+  ],
+  "was": "unknown",
+  "now": "unknown (page states up to 89% off)",
+  "discount": "up to 89% off",
+  "starts": "2026-11-02",
+  "ends": "2026-12-14 (time zone unknown)",
+  "code": "No code needed",
+  "status": "live",
+  "verified": "2026-11-04",
+  "url": "https://hosting.com/black-friday",
+  "note": "New customers only; price applies to the first 12 months, paid upfront, then renews at regular price. Includes free domain (not on Mini), SSL, daily backups, free migration, 30-day money-back guarantee. Exact per-plan prices not verified.",
+  "order": 30
+}
