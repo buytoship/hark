@@ -40,5 +40,17 @@
     "domain": "hosting.com",
     "url": "https://hosting.com/",
     "affiliate_url": ""
+  },
+  "hostpapa": {
+    "name": "HostPapa",
+    "domain": "hostpapa.com",
+    "url": "https://www.hostpapa.com/",
+    "affiliate_url": ""
+  },
+  "ipvanish": {
+    "name": "IPVanish",
+    "domain": "ipvanish.com",
+    "url": "https://www.ipvanish.com/",
+    "affiliate_url": ""
   }
 }

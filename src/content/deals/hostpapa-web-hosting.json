@@ -1,0 +1,16 @@
+{
+  "merchant": "hostpapa",
+  "categories": [
+    "hosting-vps"
+  ],
+  "starts": "unknown",
+  "ends": "2026-12-07 11:59 PM EST",
+  "status": "live",
+  "verified": "2026-11-06",
+  "url": "https://www.hostpapa.com/deals/",
+  "product": "HostPapa Web Hosting Essentials (3-year term)",
+  "now": "$1.25/mo",
+  "discount": "up to 90% off",
+  "note": "First term only, new customers; renews at $7.29/mo. Discount applied automatically in cart, no code needed. Free domain for first year on 2+ year terms.",
+  "order": 20
+}

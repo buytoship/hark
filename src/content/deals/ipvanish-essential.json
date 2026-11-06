@@ -1,0 +1,16 @@
+{
+  "merchant": "ipvanish",
+  "categories": [
+    "vpn-security"
+  ],
+  "starts": "unknown",
+  "ends": "unknown",
+  "status": "live",
+  "verified": "2026-11-06",
+  "url": "https://www.ipvanish.com/black-friday/",
+  "product": "IPVanish Essential (2-year plan, +3 GB eSIM data)",
+  "now": "$2.19/mo",
+  "discount": "85% off",
+  "note": "Complete 2-year is $2.79/mo (82% off). Monthly plan is $14.99/mo. End date is a JS countdown, not readable.",
+  "order": 22
+}

@@ -1,0 +1,16 @@
+{
+  "merchant": "hostpapa",
+  "categories": [
+    "hosting-vps"
+  ],
+  "starts": "unknown",
+  "ends": "2026-12-07 11:59 PM EST",
+  "status": "live",
+  "verified": "2026-11-06",
+  "url": "https://www.hostpapa.com/deals/",
+  "product": "HostPapa VPS Hosting (3-year term, entry plan)",
+  "now": "$2.95/mo",
+  "discount": "up to 88% off",
+  "note": "First term only, new customers; renewal price not shown on the deals page. Discount applied automatically.",
+  "order": 21
+}
